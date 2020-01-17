@@ -84,9 +84,8 @@ func secureProxy(conn net.Conn, conf configuration) {
 	if err != nil {
 		log.Print(err)
 		return
-	} else {
-		defer connTimeout.Close()
 	}
+	defer connTimeout.Close()
 	upstream := tls.Client(connTimeout, &tls.Config{ServerName: "cloudflare-dns.com"})
 	defer upstream.Close()
 	hserr := upstream.Handshake()
