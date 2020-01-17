@@ -1,0 +1,5 @@
+{
+  "Protocol": "tcp",
+  "ConnectionString": "1.1.1.1:53",
+  "TLS": false
+}
