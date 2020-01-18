@@ -4,7 +4,6 @@ import (
 	"crypto/tls"
 	"encoding/json"
 	"flag"
-	"fmt"
 	"io"
 	"log"
 	"net"
@@ -14,12 +13,8 @@ import (
 
 func main() {
 	portFlg := flag.String("p", ":53", ":<port> (default :53)")
-	protocolFlg := flag.String("t", "tcp", "TCP, UDP (default TCP)")
+	protocolFlg := flag.String("t", "tcp", "tcp, udp (default TCP)")
 	configFlg := flag.String("c", "cloudflare-secure", "<filename>.json (default cloudflare-secure.json)")
-
-	if (portFlg == nil) || (protocolFlg == nil) || (configFlg == nil) {
-		log.Fatal(fmt.Print("Defaults missing or not point"))
-	}
 
 	flag.Parse()
 
